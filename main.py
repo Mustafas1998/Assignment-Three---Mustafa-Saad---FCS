@@ -3,19 +3,22 @@
 class Stack:
     def __init__(self):
         self.elements = []
-
     def append(self, data):
         self.elements.append(data)
+    def empty(self):
+        return len(self.elements) == 0
+    def pop(self):
+        return self.elements.pop()
 
 string = Stack()
 text = input("Enter a text: ")
-
 for character in text:
     string.append(character)
+text_reversed = ""
+while not string.empty():
+    text_reversed = text_reversed + string.pop()
 
-text_reversed = text[::-1]
-
-if text_reversed == text:
+if text == text_reversed:
     print("Palindrome")
 else:
     print("Not Palindrome")
