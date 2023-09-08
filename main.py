@@ -1,27 +1,27 @@
 #Stacks and Queues -1:
 # O(n) where n is the length of the string.
-class Stack:
-    def __init__(self):
-        self.elements = []
-    def append(self, data):
-        self.elements.append(data)
-    def empty(self):
-        return len(self.elements) == 0
-    def pop(self):
-        return self.elements.pop()
-
-string = Stack()
-text = input("Enter a text: ")
-for character in text:
-    string.append(character)
-text_reversed = ""
-while not string.empty():
-    text_reversed = text_reversed + string.pop()
-
-if text == text_reversed:
-    print("Palindrome")
-else:
-    print("Not Palindrome")
+# class Stack:
+#     def __init__(self):
+#         self.elements = []
+#     def append(self, data):
+#         self.elements.append(data)
+#     def empty(self):
+#         return len(self.elements) == 0
+#     def pop(self):
+#         return self.elements.pop()
+#
+# string = Stack()
+# text = input("Enter a text: ")
+# for character in text:
+#     string.append(character)
+# text_reversed = ""
+# while not string.empty():
+#     text_reversed = text_reversed + string.pop()
+#
+# if text == text_reversed:
+#     print("Palindrome")
+# else:
+#     print("Not Palindrome")
 
 
 
@@ -35,11 +35,11 @@ def balanced(formula):
             stack.append(char)
         else:
             if stack:
-                if stack[0] == '(' and char == ')':
+                if stack[-1] == '(' and char == ')':
                     stack.pop()
-                elif stack[0] == '{' and char == '}':
+                elif stack[-1] == '{' and char == '}':
                     stack.pop()
-                elif stack[0] == '[' and char == ']':
+                elif stack[-1] == '[' and char == ']':
                     stack.pop()
             else:
                 return False
